@@ -1,0 +1,24 @@
+.div-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-menu ul{
+    padding-left: 100px;
+    display: flex;
+}
+
+.div-menu ul li{
+    padding: 10px;
+    list-style: none;
+}
+
+.icono{
+    padding-right: 100px;
+}
+
+.logo-empresa{
+    width: 10%;
+    height: 10%;
+}
+

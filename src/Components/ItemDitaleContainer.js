@@ -1,23 +1,24 @@
 import React,{useEffect,useState} from "react";
-import ItemList from "./ItemList";
+import ItemDitale from "./ItemDitale";
 import {products} from '../Mock/ProducMock';
 
 
-function ItemListContainer ({greeting}){
-    //Promesa de los productos
-    const[items,setItems] = useState([])
+function ItemDitaleContainer ({greeting}){
+    const[item,setItem] = useState({})
     
-    useEffect(()=>{
-        const misProductos = () => {
+    useEffect(() => {
+        const miProducto = () => {
             return new Promise ((res,rej) => {
+                const producto = products.find ((prod)=> prod.id===2 );
+                 console.log (producto);
                 setTimeout (()=>{
-                     res(products) ;                     
+                     res(producto) ;                     
                 },2000);
             });
         };
-        misProductos ()
+        miProducto ()
             .then((res) =>{
-               setItems(res);
+               setItem(res);
            })
             .catch((error)=>{
                console.log(error);
@@ -27,9 +28,9 @@ function ItemListContainer ({greeting}){
   return (
         <div>
          <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
-         <ItemList items={items}/>
+         <ItemDitale item={item}/>
          </div>
     );
 };
 
-export default ItemListContainer;
+export default ItemDitaleContainer;
