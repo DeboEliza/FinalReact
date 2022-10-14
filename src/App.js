@@ -14,8 +14,8 @@ function App() {
         </header>
           <Routes>
               <Route path='/' element={<ItemListContainer  greeting='Saludos!'/>}/>
-              <Route path='/category' element={<ItemListContainer  greeting='Saludos!'/>}/>
-              <Route path= 'item' element={<ItemDitaleContainer/>}/>
+              <Route path='/category' element={<ItemListContainer/>}/>
+              <Route path= '/item' element={<ItemDitaleContainer/>}/>
               <Route path='/CardWidget' element={<CardWidget/>}/>
           </Routes>
       </div>

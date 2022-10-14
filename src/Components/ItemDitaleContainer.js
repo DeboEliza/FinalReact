@@ -9,8 +9,9 @@ function ItemDitaleContainer ({greeting}){
     useEffect(() => {
         const miProducto = () => {
             return new Promise ((res,rej) => {
-                const producto = products.find ((prod)=> prod.id===2 );
-                 console.log (producto);
+                const producto = products.find ((prod)=> 
+                prod.id ===2 );
+        
                 setTimeout (()=>{
                      res(producto) ;                     
                 },2000);
@@ -24,6 +25,7 @@ function ItemDitaleContainer ({greeting}){
                console.log(error);
             })
     },[]);
+  console.log(item);
 
   return (
         <div>
