@@ -1,6 +1,7 @@
 .div-menu{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .div-menu ul{
@@ -11,6 +12,7 @@
 .div-menu ul li{
     padding: 10px;
     list-style: none;
+    
 }
 
 .icono{
@@ -22,3 +24,12 @@
     height: 10%;
 }
 
+.a{
+    margin:0px 10px
+}
+
+.active{
+    color: red;
+    margin:0px 20px
+    
+}

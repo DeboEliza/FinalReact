@@ -4,6 +4,7 @@ import './ItemList.css';
 
 
 const ItemList = ({items}) => {
+   
     //mapeo de los productos
     return (
         <div className="item-list">

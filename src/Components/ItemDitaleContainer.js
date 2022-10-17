@@ -1,16 +1,19 @@
 import React,{useEffect,useState} from "react";
 import ItemDitale from "./ItemDitale";
 import {products} from '../Mock/ProducMock';
+import { useParams } from "react-router-dom";
 
+const ItemDitaleContainer = () =>{
+    const [item, setItem] = useState({});
 
-function ItemDitaleContainer ({greeting}){
-    const[item,setItem] = useState({})
+    const {id}= useParams ();
     
     useEffect(() => {
         const miProducto = () => {
             return new Promise ((res,rej) => {
                 const producto = products.find ((prod)=> 
-                prod.id ===2 );
+                prod.id === Number (id)
+                 );
         
                 setTimeout (()=>{
                      res(producto) ;                     
@@ -25,11 +28,11 @@ function ItemDitaleContainer ({greeting}){
                console.log(error);
             })
     },[]);
+
   console.log(item);
 
   return (
         <div>
-         <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
          <ItemDitale item={item}/>
          </div>
     );

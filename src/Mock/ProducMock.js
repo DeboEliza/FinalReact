@@ -12,7 +12,7 @@ export const products = [
         title: 'Jeans de Hombre',
         price: 4500,
         stock: 5,
-        category: 'camisas',
+        category: 'pantalones',
         img: 'https://equus.vtexassets.com/arquivos/ids/186659-800-auto?v=637079136302500000&width=800&height=auto&aspect=true',
     },
     {  
@@ -36,7 +36,7 @@ export const products = [
         title: 'Remeras mujer',
         price: 2500,
         stock: 4,
-        category: 'Remeras',
+        category: 'remeras',
         img: 'https://http2.mlstatic.com/D_NQ_NP_723306-MLA31022179576_062019-W.jpg',
     },
     {
@@ -44,7 +44,7 @@ export const products = [
         title: 'Remeras hombre',
         price: 2500,
         stock: 4,
-        category: 'Remeras',
+        category: 'remeras',
         img: 'https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/73a8fe22ef424135b055ab2c0158814b_9366/remera-new-authentic.jpg',
     },
 ];

@@ -9,12 +9,12 @@
 }
 
 .App-header {
-  background-color: darkmagenta;
+  background-color: rgb(199, 134, 199);
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #c0fb61;
 }
 

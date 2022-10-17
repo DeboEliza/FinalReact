@@ -11,13 +11,17 @@ function NavBar () {
          <Brand><Link to="/">FLORENCIA INDUMENTARIA</Link></Brand>
          <div className='div-menu'>
             <ul className="menu">
-                <NavLink to='/category/pantalones'>Pantalones</NavLink>
-                <NavLink to="/category/remeras">Remeras</NavLink>
-                <NavLink to="/category/camisas">camisas</NavLink>
+                <NavLink to="./category/pantalones">Pantalones</NavLink>
+                <NavLink to="./category/remeras">Remeras</NavLink>
+                <NavLink to="./category/camisas">camisas</NavLink>
             </ul>
-            <Link to='/CardWidget'/>
-            <CardWidget/>
+            <Link to="./CardWidget">
+               <CardWidget/>
+            </Link>
+              
          </div>
+           
+
         </div>
      );
 };
