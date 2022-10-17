@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contador.css';
 
-const ItemCount = (props) => {
+const Contador = (props) => {
     const [count, setCount] = useState(props.initial);
 
     const sumar = () => {
@@ -15,13 +15,13 @@ const ItemCount = (props) => {
     return (
         <div className="container-count">
             <div className="count-btn">
-                <button onClick={sumar}>+</button>
+                <button disable = {count === props.stock} onClick={sumar}>+</button>
                 <p>{count}</p>
-                <button onClick={restar}>-</button>
+                <button disable = {count === props.initial} onClick={restar}>-</button>
             </div>
             <button className="add-btn">Agregar al carrito</button>
         </div>
     );
 };
 
-export default ItemCount;
+export default Contador;

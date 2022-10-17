@@ -4,20 +4,20 @@ import {products} from '../Mock/ProducMock';
 import { useParams } from "react-router-dom";
 
 const ItemDitaleContainer = () =>{
-    const [item, setItem] = useState({});
+    const [ item, setItem ] = useState({});
 
-    const {id}= useParams ();
+    const { id }= useParams ();
     
     useEffect(() => {
         const miProducto = () => {
             return new Promise ((res,rej) => {
-                const producto = products.find ((prod)=> 
-                prod.id === Number (id)
-                 );
+                const producto = products.find (
+                    (prod)=> prod.id === Number (id)
+                );
         
                 setTimeout (()=>{
-                     res(producto) ;                     
-                },2000);
+                    res(producto) ;                     
+                }, 2000);
             });
         };
         miProducto ()
@@ -27,7 +27,7 @@ const ItemDitaleContainer = () =>{
             .catch((error)=>{
                console.log(error);
             })
-    },[]);
+    },[id]);
 
   console.log(item);
 

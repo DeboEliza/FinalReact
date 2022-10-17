@@ -8,7 +8,7 @@ const ItemListContainer = ({greeting}) => {
 
     const {idCategory} = useParams();
     
-    useEffect(()=>{
+    useEffect(() => {
         const misProductos = () => {
             return new Promise ((res,rej) => {
                 const prodFiltrados = products.filter(

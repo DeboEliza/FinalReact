@@ -1,19 +1,19 @@
-import ItemCount from "./Contador";
+import Contador from "./Contador";
 
-const ItemDitale = ({ item }) =>{
+const ItemDitale = ({ item }) => {
    return (
       <div>
         <img src={item.img} alt=""/>
         <div>
             <h2>{item.title}</h2>
                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                  In est, voluptas temporibus fuga deleniti velit!
-                  Id exercitationem magni fuga,delectus magnam, velit sit autem
-                  harum deserunt unde non. Fuga, tempore?
+                  Indumentaria para el hombre y la mujer activos que necesitan estar cómodos
+                  y sentirse bien para transcurrir el día a día. Este tipo de diseño permite
+                  apreciar en los pequeños detalles la elegancia de un estilo clásico que
+                  valora los detalles trendy.
                </p>
 
-             <ItemCount stock={10} initial={1}/>
+             <Contador stock={10} initial={1}/>
         </div>
          
       </div>

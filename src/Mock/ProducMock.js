@@ -43,7 +43,7 @@ export const products = [
         id: 6,
         title: 'Remeras hombre',
         price: 2500,
-        stock: 4,
+        stock: 7,
         category: 'remeras',
         img: 'https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/73a8fe22ef424135b055ab2c0158814b_9366/remera-new-authentic.jpg',
     },
