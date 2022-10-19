@@ -15,11 +15,11 @@ const Contador = (props) => {
     return (
         <div className="container-count">
             <div className="count-btn">
-                <button disable = {count === props.stock} onClick={sumar}>+</button>
+                <button className="botonsito" disable = {count === props.stock} onClick={sumar}>+</button>
                 <p>{count}</p>
-                <button disable = {count === props.initial} onClick={restar}>-</button>
+                <button className="botonsito" disable = {count === props.initial} onClick={restar}>-</button>
             </div>
-            <button className="add-btn">Agregar al carrito</button>
+            <button onClick ={() => props.agregado(count)} className="add-btn">Agregar al carrito</button>
         </div>
     );
 };

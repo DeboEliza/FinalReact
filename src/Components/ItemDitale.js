@@ -1,6 +1,13 @@
 import Contador from "./Contador";
 
 const ItemDitale = ({ item }) => {
+   const [unidades, setUnidades] = useState(0);
+
+   const agregado =(numero) => {
+       // console.log (`añadiste ${numero}`);
+      setUnidades(numero);
+   };
+
    return (
       <div>
         <img src={item.img} alt=""/>
@@ -12,13 +19,11 @@ const ItemDitale = ({ item }) => {
                   apreciar en los pequeños detalles la elegancia de un estilo clásico que
                   valora los detalles trendy.
                </p>
-
-             <Contador stock={10} initial={1}/>
-        </div>
-         
+            <Contador agregado={agregado} stock={10} initial={1}/>
+         </div>
       </div>
    );
 
 };
-
+//recordar armar una condicion con el contador dentro  clase 9
 export default ItemDitale;
