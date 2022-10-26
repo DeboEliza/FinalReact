@@ -1,11 +1,17 @@
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 import Contador from "./Contador";
 
 const ItemDitale = ({ item }) => {
-   const [unidades, setUnidades] = useState(0);
+    const [unidades, setUnidades] = useState(0);
+
+    const {addToCart} = useContext (CartContext);
 
    const agregado =(numero) => {
-       // console.log (`añadiste ${numero}`);
       setUnidades(numero);
+      addToCart(item,numero)
+      
    };
 
    return (
@@ -19,7 +25,12 @@ const ItemDitale = ({ item }) => {
                   apreciar en los pequeños detalles la elegancia de un estilo clásico que
                   valora los detalles trendy.
                </p>
-            <Contador agregado={agregado} stock={10} initial={1}/>
+            
+            {unidades ===0 ? (
+               <Contador agregado={agregado} stock={item.stock} initial={1}/> 
+            ) : (
+               <Link to ='/Cart'>Ir al carrito</Link>
+            )}
          </div>
       </div>
    );
@@ -27,3 +38,6 @@ const ItemDitale = ({ item }) => {
 };
 //recordar armar una condicion con el contador dentro  clase 9
 export default ItemDitale;
+
+
+// agregado={agregado}
