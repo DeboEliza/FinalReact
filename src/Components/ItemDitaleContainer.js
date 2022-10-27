@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 
 const ItemDitaleContainer = () =>{
     const [ item, setItem ] = useState({});
+    // lo mismo que el itemListContainer  (LOADING)
+    //clase 11 ---
 
     const { id }= useParams ();
     
@@ -17,7 +19,7 @@ const ItemDitaleContainer = () =>{
         
                 setTimeout (()=>{
                     res(producto) ;                     
-                }, 2000);
+                }, 1000);
             });
         };
         miProducto ()
@@ -28,8 +30,6 @@ const ItemDitaleContainer = () =>{
                console.log(error);
             })
     },[id]);
-
-  console.log(item);
 
   return (
         <div>

@@ -3,8 +3,10 @@ import ItemList from "./ItemList";
 import {products} from '../Mock/ProducMock';
 import { useParams } from "react-router-dom";
 
+
 const ItemListContainer = ({greeting}) => {
     const[items,setItems] = useState([]);
+   
 
     const {idCategory} = useParams();
     
@@ -15,26 +17,27 @@ const ItemListContainer = ({greeting}) => {
                     (prod) => prod.category === idCategory
                 );
                 const prod = idCategory ? prodFiltrados : products;
-                setTimeout (()=>{
-                     res(prod) ;                     
-                },1000);
+                setTimeout (() => {
+                     res(prod);                     
+                }, 1000);
             });
         };
         misProductos ()
-            .then((res) =>{
+            .then((res) => {
                setItems(res);
            })
-            .catch((error)=>{
+            .catch((error) => {
                console.log(error);
             })
+          
     },[idCategory]);
 
-  return (
+   return (
         <main>
-            <div>
-                <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
-                <ItemList items={items}/>
-            </div>
+             <div>
+                   <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
+                   <ItemList items={items}/>
+                </div>               
         </main>
     );
 };

@@ -15,7 +15,7 @@ function NavBar () {
                 <NavLink to="./category/remeras">Remeras</NavLink>
                 <NavLink to="./category/camisas">camisas</NavLink>
             </ul>
-            <Link to="./CardWidget">
+            <Link to="./Cart">
                <CardWidget/>
             </Link>
               

@@ -2,5 +2,6 @@
     display:grid;
     grid-template-columns: auto auto auto;
     padding: 70px;
-
+    width: 50%;
+    height: 50%;
 }

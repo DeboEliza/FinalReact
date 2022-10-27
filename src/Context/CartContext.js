@@ -10,11 +10,28 @@ const Provider = ({children}) => {
         const producto = {...item, cantidad};
         if (isInCart (producto.id)) {
             //sumo
+            sumarCantidad(producto)
         } else {
             setCart([...cart, producto]);
         }
   
     };
+
+    const sumarCantidad = (productoAgregado) => {
+        const carritoActualizado = cart.map ((prodDelCart) =>{
+            if (prodDelCart.id === productoAgregado.id) {
+                const productoActualizado ={
+                    ...prodDelCart,
+                    cantidad: prodDelCart.cantidad * productoAgregado.cantidad,
+                };
+                return productoActualizado;
+            } else{
+                return prodDelCart;
+            }
+        } );
+            
+        setCart(carritoActualizado);
+    }
 
     const isInCart =(id) => cart.some ((prod) => prod.id ===id);
 
@@ -22,14 +39,19 @@ const Provider = ({children}) => {
 
     //borrar un solo producto
 
-    //sumar catidaddes
+    const deleteOne = (id) => {
+        const prodFiltrados = cart.filter ( (prod) => prod.id !== id)
+        setCart(prodFiltrados);
+    }
 
-    // sumar precio total
+    //sumar catidaddes (for, foreach, for of, reduce)
+
+    // sumar precio total (for, foreach, for of, reduce)
 
     console.log (cart);
 
     return (
-        <CartContext.Provider value={{cart, addToCart, borrarTodo}}>
+        <CartContext.Provider value={{cart, addToCart, borrarTodo, deleteOne}}>
             {children} 
         </CartContext.Provider>
     );

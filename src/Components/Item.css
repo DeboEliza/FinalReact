@@ -1,5 +1,5 @@
 .card {
-    size: 50px;
+    size: 40px;
     box-shadow: 4px 4px 10px 0.5px #b0b0b0;
     border-radius: 8px;
     display: flex;
@@ -19,7 +19,7 @@
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    /* border-bottom: 4px solid red; */
+    
 }
 
 .card-info {
@@ -40,3 +40,4 @@
     border-radius: 8px;
     font-size: 12px;
 }
+
