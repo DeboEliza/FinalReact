@@ -11,10 +11,7 @@ const ItemDitale = ({ item }) => {
 
    const agregado =(numero) => {
       setUnidades(numero);
-      addToCart(item,numero)
-      
-
-      
+      addToCart(item,numero) 
    };
    
 
