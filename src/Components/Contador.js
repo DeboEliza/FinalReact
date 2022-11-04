@@ -9,7 +9,7 @@ const Contador = (props) => {
     };
 
     const restar = () => {
-        count <props.stock && setCount(count - 1);
+        count < 1 && setCount(count - 1);
     };
 
     return (

@@ -37,21 +37,26 @@ const Provider = ({children}) => {
 
     const borrarTodo = () => setCart ([]);
 
-    //borrar un solo producto
-
     const deleteOne = (id) => {
         const prodFiltrados = cart.filter ( (prod) => prod.id !== id)
         setCart(prodFiltrados);
+    };
+
+
+    const totalDeUnidades = () => {
+          let count = 0
+          const cartDos = [...cart]
+          cartDos.forEach((prod)=>{
+          count = count + prod.cantidad
+        })
+        return count 
     }
-
-    //sumar catidaddes (for, foreach, for of, reduce)
-
     // sumar precio total (for, foreach, for of, reduce)
 
-    console.log (cart);
+    
 
     return (
-        <CartContext.Provider value={{cart, addToCart, borrarTodo, deleteOne}}>
+        <CartContext.Provider value={{cart,totalDeUnidades, addToCart, borrarTodo, deleteOne}}>
             {children} 
         </CartContext.Provider>
     );

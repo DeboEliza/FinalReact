@@ -21,3 +21,9 @@
     border-radius: 10px;
     border: solid 3px black;
 }
+
+h1{
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 150%;
+}

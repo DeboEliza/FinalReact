@@ -4,9 +4,10 @@ import {products} from '../Mock/ProducMock';
 import { useParams } from "react-router-dom";
 
 
+
 const ItemListContainer = ({greeting}) => {
     const[items,setItems] = useState([]);
-   
+   const[cargando,setCargando] = useState (true);
 
     const {idCategory} = useParams();
     
@@ -25,19 +26,29 @@ const ItemListContainer = ({greeting}) => {
         misProductos ()
             .then((res) => {
                setItems(res);
+               setCargando(false);
            })
             .catch((error) => {
                console.log(error);
             })
+
+        return () => setCargando (true);
           
     },[idCategory]);
 
    return (
         <main>
-             <div>
+            {
+                cargando ? (
+                    <h1>Cargando...</h1>
+                ) :(
+                <div>
                    <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
                    <ItemList items={items}/>
-                </div>               
+                </div> 
+            )
+            }
+                           
         </main>
     );
 };

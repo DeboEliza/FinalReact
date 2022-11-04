@@ -1,14 +1,22 @@
 import  './Cart.css';
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
-
+import {Link,} from 'react-router-dom';
 
 const Cart = () =>{
 
 
     const {cart, borrarTodo, deleteOne} = useContext (CartContext) ;
+     
+     if (cart.length === 0){
+       return (
+        <Link to ='/' className="irAlHomeBoton"> No has elegido ningun Item!! Presiona aqui para Ir al Home</Link>
+            
+        )   
+      }
 
     return (
+      <main>
         <div>
             {
                 cart.map ((prod)=>(
@@ -30,6 +38,7 @@ const Cart = () =>{
             <h2>TOTAL: $ 0 </h2>
             <button onClick={borrarTodo} className="botonEliminarTodo">Eliminar todo del carrito</button>
         </div>
+      </main>
     );
 
 
