@@ -1,70 +1,64 @@
 # Getting Started with Create React App
+<h1 align="center"> Florencia Indumentaria </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ![](./src/Fotos/img/logotipo.png) 
 
-## Available Scripts
+ He realizado una pagina comercial de venta de ropa donde se pueden obtener articulos por medio de una compra a traves de un carrito de compras.
 
-In the project directory, you can run:
+### Que es un carrito
 
-### `npm start`
+Un carrito de compras es un software que facilita a los consumidores la compra de algún producto o servicio al aceptar el pedido y el pago correspondiente en pocos pasos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Instrucciones para la utilizacion del carrito
 
-### `npm test`
+El usuario debe abrir la página donde está implementada el carrito de compras y comenzar su utilización, la aplicación expone varios productos con descripciones y fotografías de los productos disponibles. El usuario puede consultar la disponibilidad de un producto, esto se hace con el botón ñ{consultañ{ que esta asociado a cada item. Si el cliente esta interesado en algún producto debe seleccionar la cantidad de unidades de éste que desee, por defecto la cantidad es 1, y presionar el botón "Agregar al carrito" que agrega la cantidad especificada de ese producto al carrito de compras. Una vez que el cliente ya agregó todos los productos que desee, se debe revisar el estado de la compra, seleccionando el ícono del carrito ubicado en el extremo superior derecho de la aplicación o botón "ir al carrito". Es en este ítem donde se especifican los productos que el cliente ha seleccionado, destacando el precio de cada unidad y el valor total de la compra. Si el cliente está conforme se procede a concretar la compra, presionando el boton "Checkout" , ubicado en la parte inferior de la descripción de la misma. Esta acción lo llevará a un formulario donde el usuario debe ingresar sus datos para realizar el envío del o los productos adquiridos y finalmente presionar "enviar" para obtener una confirmación y número de orden.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](./src/Fotos/img/Capture.PNG)
 
-### `npm run build`
+###  Librerías utilizadas
+- React-router-dom
+- [Firebase](https://firebase.google.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### :heavy_check_mark: Acceso al proyecto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1  Clonar repositorio
+```
+https://github.com/DeboEliza/SegundaEntrega.git
+```
+2  abrir en tu editor de código
 
-### `npm run eject`
+3  instalar las dependencias con el comando
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm install
+```
+4 Una vez instalado puedes correrlo con el comando
+```
+mpn start
+```
+## Estado del Proyecto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="left">
+   <img src="https://img.shields.io/badge/STATUS-EN%20FINALIZADO-green">
+   </p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Agradecimientos 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Saludos Profesor Eric Waje de CoderHouse
+- Saludos tutores de CoderHouse
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
 ### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
 
 ### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
 
 ### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
