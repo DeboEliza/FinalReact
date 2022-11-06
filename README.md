@@ -32,7 +32,7 @@ Un carrito de compras es un software que facilita a los consumidores la compr
 
 1  Clonar repositorio
 ```
-https://github.com/DeboEliza/SegundaEntrega.git
+https://github.com/DeboEliza/FinalReact.git
 ```
 2  abrir en tu editor de código
 
