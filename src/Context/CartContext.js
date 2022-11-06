@@ -42,6 +42,8 @@ const Provider = ({children}) => {
         setCart(prodFiltrados);
     };
 
+    
+
 
       const totalDeUnidades = () => {
         
@@ -54,11 +56,13 @@ const Provider = ({children}) => {
         return contador;  
     }
 
-   
+    const totalPrice = () => {
+		return cart.reduce((prev, act) => prev + act.cantidad * act.price, 0);
+	};
 
     
     return (
-        <CartContext.Provider value={{cart,totalDeUnidades , addToCart, borrarTodo, deleteOne}}>
+        <CartContext.Provider value={{cart,totalDeUnidades , addToCart, borrarTodo, deleteOne,totalPrice }}>
             {children} 
         </CartContext.Provider>
     );

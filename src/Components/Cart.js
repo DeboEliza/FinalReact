@@ -6,7 +6,7 @@ import {Link,} from 'react-router-dom';
 const Cart = () =>{
     
   
-    const {cart, borrarTodo, deleteOne} = useContext (CartContext) ;
+    const {cart, borrarTodo, deleteOne,totalPrice} = useContext (CartContext) ;
 
      if (cart.length === 0){
        return (
@@ -32,7 +32,7 @@ const Cart = () =>{
                     </div>     
                 ))
             }
-            <h2>TOTAL: $ </h2>
+            <p className='total'>total: {totalPrice()}</p>
             <button onClick={borrarTodo} className="botonEliminarTodo">Eliminar todo del carrito</button>
             < Link to = '/Checkout' className= 'botonDePago'> Checkout </Link>
         </div>

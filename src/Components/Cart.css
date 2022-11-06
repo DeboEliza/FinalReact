@@ -71,3 +71,10 @@ h3{
     border-radius: 10px;
     border: solid 3px black;
 }
+
+.total{
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 100px;
+
+}
