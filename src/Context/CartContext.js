@@ -8,8 +8,9 @@ const Provider = ({children}) => {
 
     const addToCart = (item, cantidad) => {
         const producto = {...item, cantidad};
+
         if (isInCart (producto.id)) {
-            //sumo
+
             sumarCantidad(producto)
         } else {
             setCart([...cart, producto]);
@@ -21,8 +22,7 @@ const Provider = ({children}) => {
         const carritoActualizado = cart.map ((prodDelCart) =>{
             if (prodDelCart.id === productoAgregado.id) {
                 const productoActualizado ={
-                    ...prodDelCart,
-                    cantidad: prodDelCart.cantidad * productoAgregado.cantidad,
+                    ...prodDelCart,cantidad: prodDelCart.cantidad * productoAgregado.cantidad,
                 };
                 return productoActualizado;
             } else{
@@ -44,19 +44,18 @@ const Provider = ({children}) => {
 
 
     const totalDeUnidades = () => {
-          let count = 0
-          const cartDos = [...cart]
-          cartDos.forEach((prod)=>{
-          count = count + prod.cantidad
-        })
-        return count 
+        
+         let contador = 0
+         const cartDos = [...cart]
+         cartDos.forEach((prod)=>{
+          contador = contador + prod.cantidad 
+     })
+        
+        return contador;  
     }
-    // sumar precio total (for, foreach, for of, reduce)
-
     
-
     return (
-        <CartContext.Provider value={{cart,totalDeUnidades, addToCart, borrarTodo, deleteOne}}>
+        <CartContext.Provider value={{cart,totalDeUnidades , addToCart, borrarTodo, deleteOne}}>
             {children} 
         </CartContext.Provider>
     );

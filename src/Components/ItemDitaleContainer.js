@@ -1,34 +1,28 @@
 import React,{useEffect,useState} from "react";
 import ItemDitale from "./ItemDitale";
-import {products} from '../Mock/ProducMock';
 import { useParams } from "react-router-dom";
+import { collection,doc, getDoc } from "firebase/firestore";
+import { miBaseDeDatos } from "./FireBase";
 
 const ItemDitaleContainer = () =>{
     const [ item, setItem ] = useState({});
-    // lo mismo que el itemListContainer  (LOADING)
-    //clase 11 ---
-
-    const { id }= useParams ();
+  
+     const { id }= useParams ();
     
     useEffect(() => {
-        const miProducto = () => {
-            return new Promise ((res,rej) => {
-                const producto = products.find (
-                    (prod)=> prod.id === Number (id)
-                );
+        const indumentariaFirebase = collection (miBaseDeDatos,'productos')
+        const refDeMiLista = doc(indumentariaFirebase, id );
         
-                setTimeout (()=>{
-                    res(producto) ;                     
-                }, 1000);
-            });
-        };
-        miProducto ()
-            .then((res) =>{
-               setItem(res);
-           })
-            .catch((error)=>{
-               console.log(error);
+        getDoc (refDeMiLista)
+        .then ((res)=> {
+            setItem ({
+                id: res.id,
+                ...res.data(),
             })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     },[id]);
 
   return (

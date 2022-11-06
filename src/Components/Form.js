@@ -1,53 +1,78 @@
-import { useEffect, useState } from "react"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {  useState, useContext } from "react";
+import { CartContext } from "../Context/CartContext";
+import { miBaseDeDatos } from "./FireBase";
+import {Link,} from 'react-router-dom';
+import './Form.css';
 
-const Form = () =>{
-    const [name, setname] = useState ("");
-    const [lastName, setLastName] = useState ("");
+const Form = () => {
+    const [name, setname] = useState ('');
+    const [lastName, setLastName] = useState ('');
+
+    const {cart, borrarTodo} = useContext (CartContext);
+    const [numeroDeOrden,setNumeroDeOrden] = useState ('');
+
+    const[cargando,setCargando] = useState (false);
 
     const handleSubmit = (e) => {
+        setCargando (true)
         e.preventDefault();
-         //este despues lo tengo que poner en una base de DATOS
-        console.log (name, lastName)
+       
+       const order = {
+          buyer: {name, lastName}, item: cart,
+            date: serverTimestamp(),
+       };
+       const ordenDeCompras = collection (miBaseDeDatos,'ordenes')
+       addDoc(ordenDeCompras, order)
+        .then ((res) => {
+            setNumeroDeOrden(res.id);
+            borrarTodo();
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+        .finally (() => {
+            setCargando(false);
+          })
+       
     };
 
-    const handleChangeName = (e) =>{
+    const handleChangeName = (e) => {
         setname(e.target.value);
     };
        
-    const handleChangeLastName = (e) =>{
-        setLastName(e.target.value);
+    const handleChangeLastName = (e) => {
+       setLastName(e.target.value);
     };
+   console.log (numeroDeOrden);
 
-    const handleMouseMove = (e) => {
-        console.log (e.clientX, e.clientY);
-    }
+   if (numeroDeOrden){
+      return   <div>
+          <h1 className="despedida">Gracias por tu compra, tu Numero de Orden es  {numeroDeOrden}</h1>
+      <Link to ='/'   className="botonParaIrHome">  Presiona aqui para Ir al Home</Link> 
+            </div>       
+   }
 
-    //con esto puedo borrar movimientos del mouse para evitar llenar la memoria
-    
-    useEffect (() =>{
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        }
-    })
 
-    return (
-        <div style={{minHeight: '70vh',
-              display: 'flex',
-               justifyContent: 'center',
-                alignItems: 'center'
-                }}
-            >
-                
-                <form onSubmit={handleSubmit} action="">
-                    <imput 
+    return ( 
+        <main>
+               { cargando ? (
+                    <h1>Enviando...</h1>
+                ): (
+        
+             <div style={{ text: 'bold',minHeight: '70vh',
+                  display: 'flex', justifyContent: 'center', 
+                    alignItems: 'center', color: 'black', border:'solid', }}>
+
+             <form onSubmit={handleSubmit} action="">
+                    <input 
                         type="text" 
                         name="nombre"
                         placeholder="Nombre"
                         onChange={handleChangeName}
                         value={name}
                     />
-                    <imput 
+                    <input 
                         type="text" 
                         name="apellido" 
                         placeholder="Apellido" 
@@ -56,8 +81,16 @@ const Form = () =>{
                     />
                     <button>Enviar</button>
                 </form>
-        </div>
-    )
-}
+            </div>    
+             )
+            }
+        </main>
+    );
+};
 
-export default Form
+export default Form;
+
+
+
+
+ 

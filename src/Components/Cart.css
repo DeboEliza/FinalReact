@@ -26,6 +26,7 @@ main{
     height: 250%;
     padding: 5px;
     margin-top: 20px;
+    margin-bottom: 100px;
     font-weight: 700;
     color: white;
     background-color: rgb(238, 18, 84);
@@ -53,6 +54,19 @@ h3{
     font-weight: 700;
     color: white;
     background-color: rgb(238, 18, 84);
+    border-radius: 10px;
+    border: solid 3px black;
+}
+
+.botonDePago{
+    width: 20%;
+    height: 250%;
+    padding: 10px;
+    margin: 100px;
+    margin-bottom: 100px;
+    font-weight: 700;
+    color: black;
+    background-color: rgb(54, 252, 27);
     border-radius: 10px;
     border: solid 3px black;
 }

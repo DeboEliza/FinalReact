@@ -24,4 +24,4 @@ const Contador = (props) => {
     );
 };
 
-export default Contador;
+export default Contador;  

@@ -1,39 +1,39 @@
 import React,{useEffect,useState} from "react";
 import ItemList from "./ItemList";
-import {products} from '../Mock/ProducMock';
 import { useParams } from "react-router-dom";
-
-
+import {collection, getDocs,query, where} from 'firebase/firestore';
+import {miBaseDeDatos} from './FireBase';
 
 const ItemListContainer = ({greeting}) => {
     const[items,setItems] = useState([]);
-   const[cargando,setCargando] = useState (true);
+    const[cargando,setCargando] = useState (true);
 
     const {idCategory} = useParams();
     
     useEffect(() => {
-        const misProductos = () => {
-            return new Promise ((res,rej) => {
-                const prodFiltrados = products.filter(
-                    (prod) => prod.category === idCategory
-                );
-                const prod = idCategory ? prodFiltrados : products;
-                setTimeout (() => {
-                     res(prod);                     
-                }, 1000);
-            });
-        };
-        misProductos ()
-            .then((res) => {
-               setItems(res);
-               setCargando(false);
-           })
-            .catch((error) => {
-               console.log(error);
-            })
+       const indumentariaFirebase = collection (miBaseDeDatos,'productos' );
+       const miReferencia = idCategory ? query(indumentariaFirebase, where('category', '==', idCategory)) : indumentariaFirebase;
 
-        return () => setCargando (true);
-          
+          getDocs (miReferencia)
+          .then ((res) => {
+            const indumentaria = res.docs.map ((prod) =>{
+                return {
+                    id: prod.id,
+                    ...prod.data(),
+                };
+            });
+            setItems(indumentaria);
+          })
+
+          .catch ((error) =>{
+             console.log (error);
+          })
+
+          .finally (() => {
+            setCargando(false);
+          })
+       return () => setCargando (true);   
+
     },[idCategory]);
 
    return (
@@ -43,7 +43,7 @@ const ItemListContainer = ({greeting}) => {
                     <h1>Cargando...</h1>
                 ) :(
                 <div>
-                   <h1 style={{"color": "yellow", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
+                   <h1 style={{"color": "red", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
                    <ItemList items={items}/>
                 </div> 
             )

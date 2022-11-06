@@ -14,9 +14,8 @@ const ItemDitale = ({ item }) => {
       addToCart(item,numero) 
    };
    
-
    return (
-
+      <main>
       <div>       
             <img className='imagenItem' src={item.img} alt=""/>
            <div>
@@ -38,12 +37,11 @@ const ItemDitale = ({ item }) => {
                        <Link to ='/Cart' className="irAlCarritoBoton">Ir al carrito</Link>
                     )}
              </div>   
-      </div>
+         </div>
+      </main>
    );
-
 };
-//recordar armar una condicion con el contador dentro  clase 9
+
 export default ItemDitale;
 
 
-// agregado={agregado}
