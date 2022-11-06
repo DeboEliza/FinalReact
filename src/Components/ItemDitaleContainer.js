@@ -6,6 +6,7 @@ import { miBaseDeDatos } from "./FireBase";
 
 const ItemDitaleContainer = () =>{
     const [ item, setItem ] = useState({});
+    const[cargando,setCargando] = useState (true);
   
      const { id }= useParams ();
     
@@ -23,12 +24,24 @@ const ItemDitaleContainer = () =>{
         .catch((error) => {
             console.log(error)
         })
+        .finally (() => {
+            setCargando(false);
+          })
+       return () => setCargando (true); 
     },[id]);
 
   return (
-        <div>
-         <ItemDitale item={item}/>
-         </div>
+       <main>
+           {
+            cargando ? (
+                    <h1 >Cargando...</h1>
+            ) :(
+                <div>
+                    <ItemDitale item={item}/>
+                </div>
+            )
+         }
+        </main>
     );
 };
 

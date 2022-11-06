@@ -5,7 +5,7 @@ import './Item.css';
 const Item = ({prod}) => {
     
     return (
-        <Link to={`/item/${prod.id}`}>
+        
         <article className="card">
             <img  src={prod.img} alt={prod.title}/>
             <div className="card-info">
@@ -13,8 +13,9 @@ const Item = ({prod}) => {
                 <h4>${prod.price}</h4>
                 <h5>{prod.category}</h5> 
             </div>
+            <Link to={`/item/${prod.id}`} className= "botonDetalle">Detalle</Link>
         </article>
-        </Link>
+       
     );
 };
 
