@@ -43,16 +43,19 @@ const Provider = ({children}) => {
     };
 
 
-    const totalDeUnidades = () => {
+      const totalDeUnidades = () => {
         
          let contador = 0
          const cartDos = [...cart]
-         cartDos.forEach((prod)=>{
+        cartDos.forEach((prod)=>{
           contador = contador + prod.cantidad 
      })
         
         return contador;  
     }
+
+   
+
     
     return (
         <CartContext.Provider value={{cart,totalDeUnidades , addToCart, borrarTodo, deleteOne}}>

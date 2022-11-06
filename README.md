@@ -26,6 +26,7 @@ Un carrito de compras es un software que facilita a los consumidores la compr
 ### :heavy_check_mark: Librerías utilizadas
 - React-router-dom
 - [Firebase](https://firebase.google.com)
+ facilitar el acceso a datos
 
 
 ### :open_file_folder: Acceso al proyecto

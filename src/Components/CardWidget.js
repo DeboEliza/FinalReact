@@ -9,9 +9,12 @@ function CardWidget () {
         return (
            <div>
               <FontAwesomeIcon className='icono' icon={faCartShopping} /> 
-              <span>{totalDeUnidades()}</span>            
+              <span>{totalDeUnidades() || ""} </span>           
            </div>
         );
 };
 
 export default CardWidget;
+
+
+//<span>{totalProducts() || ""}</span>
