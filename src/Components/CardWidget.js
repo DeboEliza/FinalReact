@@ -17,4 +17,3 @@ function CardWidget () {
 export default CardWidget;
 
 
-//<span>{totalProducts() || ""}</span>
