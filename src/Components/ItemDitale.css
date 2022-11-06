@@ -1,6 +1,11 @@
+.detalleContador{
+    display: flex;
+    margin-bottom: 100px;
 
+}
 .imagenItem{  
     margin-top: 50px;
+    margin-left: 10px;
     width: 20%;
     height: 30%;
     border: solid 1px black;
@@ -9,16 +14,22 @@
 
 .descripcion{
    font-size: 15px;
+   font-weight: 700;
    padding:0 28%;
    margin-bottom: 20px;
 }
-
+.induIndividual{
+    text-align: center;
+    margin-right: 100px;
+    font-size: 20px;
+}
 .irAlCarritoBoton{
     width: 50%;
     height: 100%;
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 200%;
+    margin-left: 10px;
     font-weight: 700;
     color: rgb(19, 7, 7);
     background-color: rgb(230, 148, 172);

@@ -34,7 +34,7 @@ const ItemDitaleContainer = () =>{
        <main>
            {
             cargando ? (
-                    <h1 >Cargando...</h1>
+                    <h1 style={{"textAlign":"center", "fontSize" : "30px"}} >Cargando...</h1>
             ) :(
                 <div>
                     <ItemDitale item={item}/>

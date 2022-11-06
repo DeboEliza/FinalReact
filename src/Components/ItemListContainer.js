@@ -40,10 +40,10 @@ const ItemListContainer = ({greeting}) => {
         <main>
             {
                 cargando ? (
-                    <h1>Cargando...</h1>
+                    <h1 style={{"textAlign":"center", "fontSize" : "30px"}}>Cargando...</h1>
                 ) :(
                 <div>
-                   <h1 style={{"color": "red", "fontSize":"40px", "paddingleft":"50px"}}>{greeting} </h1>
+                   <h1 style={{"color": "red", "fontSize":"40px", "paddingleft":"50px", "textAlign":"center"}}>{greeting} </h1>
                    <ItemList items={items}/>
                 </div> 
             )

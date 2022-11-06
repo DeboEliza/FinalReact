@@ -44,6 +44,7 @@ h3{
 }
 
 .irAlHomeBoton{
+    text-align: center;
     display: flex;
     margin: 100px;
     margin-left: 550px;

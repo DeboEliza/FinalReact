@@ -11,9 +11,9 @@ function NavBar () {
          <Brand><Link to="/" className='tituloEmpresa'>FLORENCIA INDUMENTARIA</Link></Brand>
          <div className='div-menu'>
             <ul className="menu">
-                <NavLink to="./category/pantalones">Pantalones</NavLink>
-                <NavLink to="./category/remeras">Remeras</NavLink>
-                <NavLink to="./category/camisas">camisas</NavLink>
+                <NavLink to="./category/pantalones" className= "categorias">Pantalones</NavLink>
+                <NavLink to="./category/remeras" className= "categorias">Remeras</NavLink>
+                <NavLink to="./category/camisas" className= "categorias">camisas</NavLink>
             </ul>
             <Link to="./Cart">
                <CardWidget/>

@@ -47,7 +47,7 @@ const Form = () => {
    console.log (numeroDeOrden);
 
    if (numeroDeOrden){
-      return   <div>
+      return   <div className="terminado">
           <h1 className="despedida">Gracias por tu compra, tu Numero de Orden es  {numeroDeOrden}</h1>
       <Link to ='/'   className="botonParaIrHome">  Presiona aqui para Ir al Home</Link> 
             </div>       
@@ -57,7 +57,7 @@ const Form = () => {
     return ( 
         <main>
                { cargando ? (
-                    <h1>Enviando...</h1>
+                    <h1  className="procesoEnviando">Enviando...</h1>
                 ): (
         
              <div style={{ text: 'bold',minHeight: '70vh',

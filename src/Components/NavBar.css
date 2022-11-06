@@ -1,12 +1,19 @@
 .div-menu{
     display: flex;
     justify-content: space-between;
+
+    
     
 }
 
 .div-menu ul{
     padding-left: 100px;
     display: flex;
+    margin: 5px;
+}
+
+.categorias{
+    padding-left: 10px;
 }
 
 .div-menu ul li{
@@ -17,6 +24,8 @@
 
 .tituloEmpresa{
     font-size: 50px;
+    text-align: center;
+    margin-left: 300px;
 }
 
 .icono{
@@ -29,6 +38,7 @@ span {
 .logo-empresa{
     width: 10%;
     height: 10%;
+    margin-left: 600px;
 }
 
 .a{

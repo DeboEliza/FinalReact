@@ -16,10 +16,10 @@ const ItemDitale = ({ item }) => {
    
    return (
       <main>
-      <div>       
+         <div className="detalleContador">       
             <img className='imagenItem' src={item.img} alt=""/>
-           <div>
-              <h2>{item.title}</h2>
+            <div>
+              <h2 className="induIndividual">{item.title}</h2>
                   <p className="descripcion">
                   Indumentaria para el hombre y la mujer activos que necesitan estar cómodos
                   y sentirse bien para transcurrir el día a día. Este tipo de diseño permite
@@ -27,7 +27,7 @@ const ItemDitale = ({ item }) => {
                   valora los detalles trendy.
                   </p>
                  {
-                  <h1 style={{color: unidades === 0 ? 'black' : 'red'}}>
+                  <h1 style={{color: unidades === 0 ? 'black' : 'red', paddingLeft:'20px', marginTop: '10px'}}>
                          {unidades === 0  ? ` Hay ${unidades} unidades`  : `Quieres Agregar Mas? `}  
                    </h1>
                  }
@@ -36,7 +36,7 @@ const ItemDitale = ({ item }) => {
                    ) : (
                        <Link to ='/Cart' className="irAlCarritoBoton">Ir al carrito</Link>
                     )}
-             </div>   
+            </div>   
          </div>
       </main>
    );
