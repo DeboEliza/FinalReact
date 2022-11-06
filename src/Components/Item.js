@@ -5,7 +5,7 @@ import './Item.css';
 const Item = ({prod}) => {
     
     return (
-        
+        <main>
         <article className="card">
             <img  src={prod.img} alt={prod.title}/>
             <div className="card-info">
@@ -15,7 +15,7 @@ const Item = ({prod}) => {
             </div>
             <Link to={`/item/${prod.id}`} className= "botonDetalle">Detalle</Link>
         </article>
-       
+       </main>
     );
 };
 

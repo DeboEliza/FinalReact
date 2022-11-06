@@ -15,3 +15,31 @@
     border-radius: 10px;
     border: solid 3px black;
 }
+
+.form{
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid rgb(87, 7, 7);
+    border-radius: 2em;
+}
+
+.imput{
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.enviarBoton{
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(230, 148, 172);
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.correo{
+    font-size: 20px;
+    
+}

@@ -62,24 +62,27 @@ const Form = () => {
         
              <div style={{ text: 'bold',minHeight: '70vh',
                   display: 'flex', justifyContent: 'center', 
-                    alignItems: 'center', color: 'black', border:'solid', }}>
+                    alignItems: 'center', color: 'black', }}>
 
-             <form onSubmit={handleSubmit} action="">
-                    <input 
+             <form className="form"  onSubmit={handleSubmit} action="">
+                <label for="mail"  className="correo">Correo electrónico:</label>
+                 <input className="imput" type="email" id="mail" name="user_mail" placeholder="Correo Electronico"/>
+
+                    <input className="imput"
                         type="text" 
                         name="nombre"
                         placeholder="Nombre"
                         onChange={handleChangeName}
                         value={name}
                     />
-                    <input 
+                    <input className="imput"
                         type="text" 
                         name="apellido" 
                         placeholder="Apellido" 
                         onChange={handleChangeLastName}
                         value={lastName}
                     />
-                    <button>Enviar</button>
+                    <button className="enviarBoton">Enviar</button>
                 </form>
             </div>    
              )
